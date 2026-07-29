@@ -1,11 +1,11 @@
-# 👤 Face Presentation Classifier
+# Face Presentation Classifier
 
 > **IMPORTANT DISCLAIMER**  
 > *This model estimates facial presentation based only on visual appearance (`Masculine-presenting` or `Feminine-presenting`). It does **NOT** determine or verify a person's actual gender identity.*
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 **Face Presentation Classifier** is a full-stack, production-ready Deep Learning & Computer Vision application designed to estimate visual facial presentation from images or live webcam streams. Built with **PyTorch**, **Torchvision**, **MediaPipe**, **FastAPI**, and **Gradio**, it includes end-to-end data generation, preprocessing, model training, evaluation, explainability (Grad-CAM), model export (ONNX / TorchScript), and REST API deployment.
 <img width="1886" height="860" alt="image" src="https://github.com/user-attachments/assets/05f05fa2-f30f-4759-963d-9187311161c0" />
@@ -14,7 +14,7 @@
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - 📷 **Dual Input Modes**: Live webcam capture with preview and crop or local image upload (`.jpg`, `.jpeg`, `.png`, `.webp`).
 - 🔍 **Multi-Engine Face Detection**: Supports **MediaPipe Face Detection**, **RetinaFace**, and **OpenCV Haar Cascades** fallback.
@@ -23,28 +23,28 @@
   - Eye landmark horizontal alignment
   - CLAHE & Contrast Limited Brightness Normalization
   - Square Center Crop & ImageNet scaling
-- 🧠 **Multiple Model Backbones**:
+  - **Multiple Model Backbones**:
   - `EfficientNet-B0` (Default)
   - `EfficientNet-V2-S`
   - `ResNet50`
   - `MobileNetV3-Large`
   - `ConvNeXt-Tiny`
-- 🏋️ **Advanced PyTorch Training Engine**:
+  - **Advanced PyTorch Training Engine**:
   - Automatic Mixed Precision (AMP)
   - Cosine Annealing / ReduceLROnPlateau Scheduler
   - Label Smoothing Cross Entropy
   - Class Weight Balancing & Gradient Clipping
   - Early Stopping & Best Checkpoint Preservation
   - TensorBoard Dashboard Logging
-- 🎨 **Data Augmentation**: Powered by **Albumentations** (Horizontal Flip, Rotation, Color Jitter, Gaussian Blur, Coarse Dropout, Shift-Scale-Rotate).
-- 🔥 **Grad-CAM Explainability**: Visual attention heatmaps displaying which facial regions influenced the model's decision.
-- 🌐 **Modern Gradio Web UI**: Responsive dark theme with live preview, prediction card, confidence bar, inference timing meter, and reset controls.
-- ⚡ **FastAPI REST Service**: Production `POST /predict` and `GET/POST /health` REST endpoints.
-- 📦 **Export Engine**: Export trained models to **TorchScript (.pt)**, **ONNX (.onnx)**, and **TensorRT (.engine)**.
+-  **Data Augmentation**: Powered by **Albumentations** (Horizontal Flip, Rotation, Color Jitter, Gaussian Blur, Coarse Dropout, Shift-Scale-Rotate).
+-  **Grad-CAM Explainability**: Visual attention heatmaps displaying which facial regions influenced the model's decision.
+-  **Modern Gradio Web UI**: Responsive dark theme with live preview, prediction card, confidence bar, inference timing meter, and reset controls.
+-  **FastAPI REST Service**: Production `POST /predict` and `GET/POST /health` REST endpoints.
+-  **Export Engine**: Export trained models to **TorchScript (.pt)**, **ONNX (.onnx)**, and **TensorRT (.engine)**.
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 FacePresentationClassifier/
@@ -80,7 +80,7 @@ FacePresentationClassifier/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### 1. Clone & Setup Virtual Environment
 ```bash
@@ -101,7 +101,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📊 Dataset Preparation & Synthetic Generator
+## Dataset Preparation & Synthetic Generator
 
 The dataset should follow this directory structure:
 
@@ -127,7 +127,7 @@ python main.py generate-data
 
 ---
 
-## 🚀 Quick Start & Usage
+## Quick Start & Usage
 
 ### 1. Launch Gradio Web Interface
 ```bash
@@ -185,7 +185,7 @@ Returns system health, CUDA availability, and device information.
 
 ---
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 Build and run using Docker:
 
@@ -202,7 +202,7 @@ docker run -p 8000:8000 face-presentation-classifier python main.py api
 
 ---
 
-## 🛠️ Configuration (`configs/config.yaml`)
+## Configuration (`configs/config.yaml`)
 
 ```yaml
 dataset:
@@ -229,7 +229,7 @@ training:
 
 ---
 
-## 📈 Evaluation Metrics
+## Evaluation Metrics
 
 - **Accuracy**, **Precision**, **Recall**, **F1-Score**
 - **ROC Curve & AUC Score**
@@ -238,7 +238,7 @@ training:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 1. Integration with Vision Transformer (ViT) backbones.
 2. TensorRT C++ CNI integration for ultra-low latency edge deployments.
