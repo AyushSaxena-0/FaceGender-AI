@@ -8,6 +8,9 @@
 ## 📌 Project Overview
 
 **Face Presentation Classifier** is a full-stack, production-ready Deep Learning & Computer Vision application designed to estimate visual facial presentation from images or live webcam streams. Built with **PyTorch**, **Torchvision**, **MediaPipe**, **FastAPI**, and **Gradio**, it includes end-to-end data generation, preprocessing, model training, evaluation, explainability (Grad-CAM), model export (ONNX / TorchScript), and REST API deployment.
+<img width="1886" height="860" alt="image" src="https://github.com/user-attachments/assets/05f05fa2-f30f-4759-963d-9187311161c0" />
+<img width="1895" height="857" alt="image" src="https://github.com/user-attachments/assets/9cc823ce-6e84-49e2-b8b1-4f8fd6209cc3" />
+
 
 ---
 
