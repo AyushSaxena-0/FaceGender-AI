@@ -1,0 +1,70 @@
+# Face Presentation Classifier Configuration File
+
+dataset:
+  dataset_type: "fairface"  # Options: directory, fairface
+  path: "dataset"
+  train_dir: "dataset/train"
+  val_dir: "dataset/validation"
+  test_dir: "dataset/test"
+  input_size: [224, 224]
+  num_classes: 2
+  class_names: ["masculine", "feminine"]
+  disclaimer: "IMPORTANT DISCLAIMER: This model estimates facial presentation based only on visual appearance. It does NOT determine or verify a person's actual gender identity."
+
+fairface:
+  train_csv: "data/fairface_train.csv"
+  val_csv: "data/fairface_val.csv"
+  img_dir: ""
+  total_images: 108501
+  balanced_demographics: true
+
+model:
+  backbone: "efficientnet_b0"  # Supported: efficientnet_b0, efficientnet_v2_s, resnet50, mobilenet_v3_large, convnext_tiny
+  pretrained: true
+  dropout_rate: 0.3
+  freeze_backbone: false
+  num_classes: 2
+
+face_detection:
+  detector: "mediapipe"  # Options: mediapipe, retinaface, opencv
+  min_detection_confidence: 0.5
+  align_faces: true
+  margin_percentage: 0.15
+
+preprocessing:
+  target_size: [224, 224]
+  brightness_normalization: true
+  apply_clahe: true
+  normalize_mean: [0.485, 0.456, 0.406]
+  normalize_std: [0.229, 0.224, 0.225]
+
+training:
+  batch_size: 16
+  num_workers: 2
+  epochs: 15
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  optimizer: "adamw"  # Options: adamw, adam, sgd
+  scheduler: "cosine"  # Options: cosine, reduce_on_plateau, step
+  label_smoothing: 0.1
+  use_amp: true
+  grad_clip_norm: 1.0
+  early_stopping_patience: 5
+  class_weights: [1.0, 1.0]
+
+paths:
+  weights_dir: "weights"
+  best_model_path: "weights/best_model.pth"
+  onnx_model_path: "weights/model.onnx"
+  torchscript_model_path: "weights/model.pt"
+  output_dir: "outputs"
+  logs_dir: "logs"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+gradio:
+  server_name: "0.0.0.0"
+  server_port: 7860
+  share: false

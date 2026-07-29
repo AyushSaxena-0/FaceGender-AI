@@ -1,0 +1,33 @@
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# PyTorch / TensorBoard / Model Outputs
+*.pth
+*.pt
+*.onnx
+logs/
+tensorboard/
+outputs/misclassified/
+outputs/*.png
+outputs/*.csv
+outputs/*.txt
+scratch/
+
+# Environments & IDEs
+.venv/
+env/
+venv/
+ENV/
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Large datasets
+datasets/utkface/
+datasets/celeba/
+data/fairface_images/
